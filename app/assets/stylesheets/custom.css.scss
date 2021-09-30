@@ -1,0 +1,40 @@
+.navbar {
+	background-color: #073b15;
+	padding: 4px 8px !important;
+}
+#logo {
+	float: left;
+	font-size: 1.7em;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+#logo:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.nav-link {
+	color: #fff !important;
+}
+.jumb {
+	background: lightgray;
+	background-image: asset-url("cover.jpg");
+	background-size: contain;
+	text-align: center;
+	height: 300px;
+	padding: 70px;
+}
+
+.jumb h1,
+h2 {
+	color: #fff;
+}
+.footer {
+	background-color: #073b15;
+	padding: 20px;
+	text-align: center;
+	color: white;
+	font-size: 25px;
+}
