@@ -1,0 +1,22 @@
+<div class="container">
+<%= render 'shared/page_title', title: "showing all recipes" %> 
+<hr class="mb-5" />
+<% @recipes.each do |recipe| %>
+  <div class="row w-100">
+    <div class="col-lg-2">
+      <div class="img-div">
+        <%= image_tag 'user.jpg', class:"user-img" %>
+      </div>
+    </div>
+    <div class="col-lg-8 well">
+      <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
+      <p><%= truncate(recipe.description, length: 100) %></p>
+      <p>
+        <span class="quiet"><small>Created 
+
+        <%= time_ago_in_words(recipe.created_at) %> ago</small></span>
+      </p> 
+    </div>
+  </div> 
+<% end %>
+</div>
