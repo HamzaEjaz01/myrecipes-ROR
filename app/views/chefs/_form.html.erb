@@ -1,0 +1,48 @@
+<%= render 'shared/errors', obj: @chef %>
+
+<div class="row w-100 mt-3 mb-5">
+  <div class="col-lg-12 col-cen">
+    <%= form_for(@chef, :html => {class: "form-horizontal", role: "form"}) do |f| %>                                                            
+      <div class="form-group">
+        <div class="control-label">
+          <%= f.label :chefname, "Name" %>
+        </div>
+        <div class="col-lg-12">
+          <%= f.text_field :chefname, class: "form-control", placeholder: "Enter your name", autofocus: true %>                                                                        
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <div class="control-label">
+          <%= f.label :email %>
+        </div>
+        <div class="col-lg-12">
+          <%= f.email_field :email, class: "form-control", placeholder: "Enter your email" %>                              
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <div class="control-label">
+          <%= f.label :password %>
+        </div>
+        <div class="col-lg-12">
+          <%= f.password_field :password, class: "form-control", placeholder: "Choose a password" %>                              
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <div class="control-label">
+          <%= f.label :password_confirmation, "Confirm Password" %>
+        </div>
+        <div class="col-lg-12">
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm your password" %>                              
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <div class="">
+          <%= f.submit(@chef.new_record? ? "Create my account" : "Update my account", class: "btn btn-primary btn-md bt-clr") %>
+        </div>
+      </div>
+    <% end %>
+    <div class="colormatch mt-3">
+      [ <%= link_to "Cancel request and return to recipes listing", recipes_path %> ]                                                                         
+    </div>
+  </div> 
+</div>  

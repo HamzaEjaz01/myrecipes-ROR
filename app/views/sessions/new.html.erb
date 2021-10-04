@@ -1,0 +1,37 @@
+<div class="container">
+  <%= render 'shared/page_title', title: 'Login' %>
+  <hr />
+
+<div class="row w-100 mt-3 mb-5">
+  <div class="col-lg-12 col-cen">
+    <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>                                                            
+      <div class="form-group mt-3">
+        <div class="control-label">
+          <%= f.label :email %>
+        </div>
+        <div class="col-lg-12">
+          <%= f.email_field :email, class: "form-control", placeholder: "Enter your email" %>                              
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <div class="control-label">
+          <%= f.label :password %>
+        </div>
+        <div class="col-lg-12">
+          <%= f.password_field :password, class: "form-control", placeholder: "Enter your password" %>                              
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <div class="">
+          <%= f.submit "Login" , class: "btn btn-primary btn-md bt-clr" %>
+        </div>
+      </div>
+    <% end %>
+    <div class="colormatch my-5 pt-3">
+      [ <%= link_to "Don't have an account? Signup now!", signup_path %> ]                                                                         
+    </div>
+  </div> 
+</div>  
+
+
+</div>

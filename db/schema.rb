@@ -17,13 +17,14 @@ ActiveRecord::Schema.define(version: 2021_09_30_124928) do
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
+    t.string "password_digest"
+  end 
 
   create_table "recipes", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.text "description"
+    t.text "description" 
     t.integer "chef_id"
   end
 
