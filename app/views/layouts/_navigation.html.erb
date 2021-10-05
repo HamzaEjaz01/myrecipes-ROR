@@ -23,7 +23,22 @@
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul> 
           </li>
-        <% end %> 
+        <% end %>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Ingredients
+            </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><%= link_to "View all Ingredients", ingredients_path, class: "nav-li" %></li> 
+                 <% Ingredient.all.each do |ing| %>
+                    <li><%= link_to ing.name.capitalize, ingredient_path(ing), class: "nav-li" %></li>
+                 <% end %>  
+                <% if logged_in? && current_chef.admin? %>                             
+                  <li><hr class="dropdown-divider"></li>
+                  <li><%= link_to "New Ingredient", new_ingredient_path, class: "nav-li" %></li>
+                <% end %>
+              </ul> 
+          </li> 
       </ul>
       <form class="d-flex me-auto">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

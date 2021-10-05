@@ -7,6 +7,9 @@
     <h4 class="text-center description"><strong>Description </strong></h4>
     <hr />
   <%= simple_format(@recipe.description) %>
+    <% if @recipe.ingredients.any? %>
+      <p>Ingredients: <%= render @recipe.ingredients %></p>
+    <% end %>
     <div class="pull-right">
       <p class="center">
         Created by:
@@ -29,3 +32,47 @@
 </div>
 </div>
 
+<% if logged_in? %>
+  <div class="row w-100 my-5">
+    <div class="col-lg-12 col-cen">
+      <h3 class="text-center"> Comments </h3>
+      <hr />
+      <%= form_for([@recipe, @comment], :html => {class: "form-horizontal", role: "form"}) do |f| %>                                                            
+        <div class="form-group mt-3">
+          <div class="control-label">
+            <%= f.label :description, "Comment" %>
+          </div>
+          <div class="col-lg-12">
+            <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Enter comment here" %>                              
+          </div>
+        </div>
+
+        <div class="form-group mt-3">
+          <div class="">
+            <%= f.submit "Submit Comment", class: "btn btn-primary btn-md bt-clr" %>
+          </div>
+        </div>
+      <% end %>
+      <hr />
+    </div> 
+  </div>  
+<% end %>
+
+<div class="container my-5">
+  <% if @recipe.comments != 0 %>
+    <div class="row w-100">
+      <div class="col-lg-8 m-auto">
+        <h3 class="text-center">Prior Comments: </h3>
+          <div id="messages">
+            <%= render partial: 'comments/comments', object: @comments %>
+          </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="row w-100">
+      <div class="col-lg-8 m-auto"> 
+        <h3 class="text-center">No Comments Yet!</h3>
+      </div>
+    </div>
+  <% end %>
+</div>

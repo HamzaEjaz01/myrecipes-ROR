@@ -96,7 +96,7 @@
 .nav-li {
 	color: black;
 	text-decoration: none;
-	padding: 15px;
+	padding: 10px 5px;
 }
 
 .previous_page {
@@ -129,4 +129,7 @@
 .dropdown-menu.show.abc {
 	margin-left: -20px !important;
 	top: 40px !important;
+}
+.badge {
+	background-color: yellow;
 }

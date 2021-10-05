@@ -1,0 +1,11 @@
+<div class="img-div mb-5">
+  <%= will_paginate comments %>
+</div>
+
+<% comments.each do |comment| %>
+  <%= render(partial: 'comments/comment', object: comment) %>
+<% end %>
+
+<div class="img-div mb-5">
+  <%= will_paginate comments %> 
+</div>

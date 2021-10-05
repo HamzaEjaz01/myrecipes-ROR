@@ -1,0 +1,14 @@
+ <div class="row w-100">
+  <div class="col-lg-2">
+    <%= image_tag 'user.jpg', class:"user-img" %>
+  </div>
+  <div class="col-lg-8 well mt-3">
+    <p><%= comment.description %></p>
+    <p>
+      <span class="quiet"><small>Created: 
+        <%= time_ago_in_words(comment.created_at) %> ago by 
+        <%= comment.chef.chefname %></small>
+      </span>
+    </p>
+  </div>
+</div>

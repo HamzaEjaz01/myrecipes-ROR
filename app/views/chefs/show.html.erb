@@ -3,16 +3,20 @@
   <hr />
 
   <%= image_tag 'user.jpg', class:"user-img" %>
-  <h4 class="text-center mb-3"> <%= @chef.chefname %>'s recipes </h4>
   
-  <div class="img-div my-5"> 
-   <%= will_paginate @chef_recipes %>
-  </div>
+  <% if @chef.recipes.count != 0 %>
+    <h4 class="text-center mb-3"> <%= @chef.chefname %>'s recipes </h4>
+    
+    <div class="img-div my-5"> 
+    <%= will_paginate @chef_recipes %>
+    </div>
 
-  <%= render 'recipes/recipe', obj: @chef_recipes %>
+    <%= render 'recipes/recipe', obj: @chef_recipes %>
 
-  <div class="img-div my-5"> 
-   <%= will_paginate @chef_recipes %>
-  </div>
-
+    <div class="img-div my-5"> 
+    <%= will_paginate @chef_recipes %>
+    </div>
+  <% else %>
+    <h4 class="text-center"> No Recipes Yet </h4>
+  <% end %>
 </div>  
